@@ -90,4 +90,4 @@ statsmodels (SARIMAX, adfuller, kpss, seasonal_decompose, plot_acf, plot_pacf)
 
 ---
 
-*Week 2 · Celebal Excellence Internship · Data Science · 2025*
+*Week 2 · Celebal Excellence Internship · Data Science · 2026*
