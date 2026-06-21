@@ -94,4 +94,4 @@ numpy, pandas, matplotlib, seaborn, scipy.stats, sklearn.preprocessing
 
 ---
 
-*Week 1 · Celebal Excellence Internship · Data Science · 2025*
+*Week 1 · Celebal Excellence Internship · Data Science · 2026*
