@@ -124,4 +124,4 @@ CEI/
 
 ---
 
-*Celebal Technologies · CEI Data Science Internship · 2025*
+*Celebal Technologies · CEI Data Science Internship · 2026*
