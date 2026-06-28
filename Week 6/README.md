@@ -111,17 +111,17 @@ loss = criterion(output, clean_imgs)
 | **PSNR Improvement** | **+5.99 dB** |
 
 ### Loss Curves
-![Loss Curves](assets/loss_curves.png)
+![Loss Curves](/loss_curves.png)
 
 Train and validation loss converge together with no overfitting, confirming the model generalizes well.
 
 ### Clean | Noisy | Denoised
-![Comparison Grid](assets/comparison_grid.png)
+![Comparison Grid](/comparison_grid.png)
 
 Digit structure that is visually unreadable in the noisy images (row 2) is clearly recovered in the denoised output (row 3) — strokes, loops, and endpoints are all preserved.
 
 ### Noise Robustness
-![Noise Robustness](assets/noise_robustness.png)
+![Noise Robustness](/noise_robustness.png)
 
 The model was trained at σ = 0.4. Performance across different noise levels:
 - **σ ≤ 0.3** — near-perfect reconstruction
@@ -129,7 +129,7 @@ The model was trained at σ = 0.4. Performance across different noise levels:
 - **σ ≥ 0.6** — model reverts to a blurry mean estimate (expected behaviour for OOD noise)
 
 ### Residual Error Maps
-![Residual Map](assets/residual_map.png)
+![Residual Map](/residual_map.png)
 
 Residual heatmaps (|Clean − Denoised|) show the largest errors at stroke edges and in structurally complex digits (e.g., 8, 3). Background pixels are reconstructed almost perfectly, confirming the model learned to distinguish signal from noise.
 
@@ -140,7 +140,6 @@ Residual heatmaps (|Clean − Denoised|) show the largest errors at stroke edges
 ```
 ├── denoising_autoencoder_MNIST.ipynb   # Full runnable notebook
 ├── best_dae.pth                        # Saved model weights (best checkpoint)
-├── assets/
 │   ├── comparison_grid.png
 │   ├── loss_curves.png
 │   ├── noise_robustness.png
