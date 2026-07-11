@@ -1,0 +1,278 @@
+[
+  {
+    "idx": 1,
+    "category": "Dimensions",
+    "query": "What are the dimensions of the Tata Nexon?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "nexon_p38_c1"
+    ],
+    "answer": "The Tata Nexon has dimensions of 3995 mm in length, 1804 mm in width, and 1620 mm in height."
+  },
+  {
+    "idx": 2,
+    "category": "Dimensions",
+    "query": "What is the width of Maruti Baleno?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "baleno_p8_c1"
+    ],
+    "answer": "The width of the Maruti Suzuki Baleno is 1745 mm."
+  },
+  {
+    "idx": 3,
+    "category": "Dimensions",
+    "query": "How big is the Hyundai Verna?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "verna_p11_c1"
+    ],
+    "answer": "The Hyundai Verna has an overall length of 4,565 mm, an overall width of 1,765 mm, and an overall height of 1,475 mm. These dimensions are consistent across both the 1.5L MPi petrol and 1.5L Turbo GDi petrol variants."
+  },
+  {
+    "idx": 4,
+    "category": "Safety",
+    "query": "What safety features does Maruti Fronx have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "fronx_p19_c15",
+      "fronx_p11_c1",
+      "fronx_p19_c13",
+      "fronx_p19_c9"
+    ],
+    "answer": "The Maruti Suzuki Fronx comes equipped with a comprehensive suite of safety features as standard across all variants, including six airbags (dual front, side, and curtain), Electronic Stability Program (ESP) with Hill Hold Assist, 3-point ELR seatbelts for all seats, ISOFIX child seat anchorages, and reverse parking sensors with an infographic display. Additionally, it features a rear defogger, seat belt reminders for all passengers, and a 3-year/100,000km warranty. Higher variants or specific engine configurations also include advanced security features such as emergency alerts, breakdown notification, stolen vehicle tracking, geofencing, and valet alerts. The vehicle is built on the Suzuki HEARTECT platform using high and ultra-high tensile steel."
+  },
+  {
+    "idx": 5,
+    "category": "Safety",
+    "query": "What safety equipment is standard on Tata Punch?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "punch_p9_c1",
+      "punch_p30_c1",
+      "punch_p12_c1"
+    ],
+    "answer": "The Tata Punch comes with several standard safety features across its variants, including 6 airbags, Electronic Stability Program (ESP), Hill Hold Assist, iTPMS (Intelligent Tyre Pressure Monitoring System), ISOFIX child seat anchor system, 3-point ELR seatbelts with seatbelt reminders for all seats, central locking, and a puncture kit."
+  },
+  {
+    "idx": 6,
+    "category": "Safety",
+    "query": "What safety features are in Hyundai Exter?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "exter_p9_c2",
+      "exter_p6_c2",
+      "exter_p6_c4"
+    ],
+    "answer": "The Hyundai Exter comes with 6 airbags as standard across all variants. Key safety features include ABS with EBD, Electronic Stability Control (ESC), Hill-start Assist Control (HAC), Vehicle Stability Management (VSM), rear parking sensors, rear parking camera, and a Tyre Pressure Monitoring System (TPMS) - Highline. Additional safety equipment includes 3-point seatbelts for all seats, seatbelt reminders for all seats, ISOFIX child seat anchors, an immobilizer, burglar alarm, impact sensing auto door unlock, and speed sensing auto door lock. Specific variants also feature a dashcam, automatic headlamps, and a rear defogger. Other listed safety features include Emergency Stop Signal (ESS), Day & Night IRVM with MTS, and front disc brakes."
+  },
+  {
+    "idx": 7,
+    "category": "Infotainment",
+    "query": "What infotainment screen size does Tata Harrier have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "harrier_p19_c1",
+      "harrier_p18_c2",
+      "harrier_p10_c1",
+      "harrier_p19_c5"
+    ],
+    "answer": "The Tata Harrier features different infotainment screen sizes depending on the variant. The Fearless X variant is equipped with an Ultra view 31.24 cm HD Harman\u2122 Infotainment Touchscreen, while the Pure X variant features an Ultra view 26.03 cm HD Harman\u2122 Infotainment Touchscreen. Additionally, the Fearless Ultra variant and other select trims feature a 36.9 cm Cinematic Infotainment Screen by Harman\u2122."
+  },
+  {
+    "idx": 8,
+    "category": "Infotainment",
+    "query": "What's the infotainment system in Maruti Brezza?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "brezza_p5_c2",
+      "brezza_p2_c1"
+    ],
+    "answer": "The Maruti Suzuki Brezza offers different infotainment systems depending on the variant. The VXi variant features a 17.78cm SmartPlay Studio system, while the ZXi variant is equipped with a 17.78cm SmartPlay Pro system. The top-tier ZXi+ variant comes with a 22.86cm SmartPlay Pro+ infotainment system. Additionally, the ZXi and ZXi+ variants include ARKAMYS sound systems, with the ZXi+ featuring ARKAMYS Surround Sense. Wireless Android Auto and Apple CarPlay, USB and Bluetooth connectivity, and steering-mounted audio and Bluetooth controls are available from the VXi variant onwards. The ZXi and ZXi+ variants also include Over the Air (OTA) updates and an onboard voice assistant with a barge-in feature."
+  },
+  {
+    "idx": 9,
+    "category": "Infotainment",
+    "query": "What sound system or screen does Hyundai i20 have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "i20_p11_c1",
+      "i20_p6_c1"
+    ],
+    "answer": "The Hyundai i20 offers a Bose premium 7-speaker system across several variants. Regarding the infotainment screen, it features either a 26.03 cm (10.25\") HD touchscreen infotainment and navigation system or a 20.32 cm (8\") touchscreen infotainment system, depending on the variant."
+  },
+  {
+    "idx": 10,
+    "category": "Transmission",
+    "query": "What gearbox options does Maruti Dzire have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "dzire_p5_c3"
+    ],
+    "answer": "The Maruti Suzuki Dzire offers different transmission options based on the fuel type. For the petrol variant, it is available with a 5-speed manual transmission (5MT) or a 5-speed Auto Gear Shift (5AMT). The CNG variant is available exclusively with a 5-speed manual transmission (5MT)."
+  },
+  {
+    "idx": 11,
+    "category": "Transmission",
+    "query": "What transmission options does Hyundai Verna have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "verna_p7_c1",
+      "verna_p11_c3"
+    ],
+    "answer": "The Hyundai Verna offers the following transmission options depending on the engine: the 1.5L MPi petrol engine is available with a 6-speed manual transmission or an Intelligent Variable Transmission (iVT), while the 1.5L Turbo GDi petrol engine is available with a 6-speed manual transmission or a 7-speed dual clutch transmission (DCT)."
+  },
+  {
+    "idx": 12,
+    "category": "Transmission",
+    "query": "What gearbox does Tata Altroz offer?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "altroz_p18_c1"
+    ],
+    "answer": "The Tata Altroz offers several transmission and shifter options depending on the powertrain and variant. Available options include a 6-speed DCA (Dual Clutch Automatic) technology, an AMT (Automated Manual Transmission), and an E-Shifter for electronic gear changes. Additionally, the vehicle features paddle shifters on the steering wheel for manual gear management."
+  },
+  {
+    "idx": 13,
+    "category": "Tyre",
+    "query": "What tyre size does Maruti Swift use?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "swift_p6_c1"
+    ],
+    "answer": "The Maruti Suzuki Swift uses different tyre sizes depending on the variant: the LXi, VXi, and VXi (O) variants are equipped with 165/80 R14 tyres, while the ZXi and ZXi+ variants are equipped with 185/65 R15 tyres."
+  },
+  {
+    "idx": 14,
+    "category": "Tyre",
+    "query": "What tire size is on Hyundai Venue?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "venue_p18_c6"
+    ],
+    "answer": "The Hyundai Venue offers multiple tire size options depending on the variant and wheel type. The available sizes are 195/65 R15 (D = 380.2 mm) and 215/60 R16 (D = 405.6 mm). The 195/65 R15 size is used for steel wheels with covers, while the 215/60 R16 size is used for styled steel wheels, diamond-cut alloy wheels, and black-painted alloy wheels. Additionally, the spare wheel for all variants is 195/65 R15 (D = 380.2 mm) steel wheel."
+  },
+  {
+    "idx": 15,
+    "category": "Tyre",
+    "query": "What tyre specs does Tata Tiago have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "tiago_p27_c1"
+    ],
+    "answer": "The tyre size for the Tata Tiago varies by variant: the Smart variant is equipped with 155/80 R13 tyres, the Pure, Pure+, and Pure+ A variants use 175/65 R14 tyres, and the Creative and Creative+ variants feature 175/60 R15 tyres. All iCNG variants are equipped with 175/65 R14 tyres."
+  },
+  {
+    "idx": 16,
+    "category": "Brakes/Suspension",
+    "query": "What suspension system does Tata Nexon use?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "nexon_p44_c9"
+    ],
+    "answer": "The Tata Nexon features the same suspension system across its Petrol, Diesel, and CNG variants. The front suspension is an independent, lower wishbone, McPherson strut with a coil spring. The rear suspension is a semi-independent, open profile twist beam with a stabiliser bar, coil spring, and shock absorber."
+  },
+  {
+    "idx": 17,
+    "category": "Brakes/Suspension",
+    "query": "What brakes are on Maruti Grand Vitara?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "grand-vitara_p15_c7"
+    ],
+    "answer": "The Maruti Suzuki Grand Vitara is equipped with disc brakes for both the front and rear wheels across both the Petrol and Strong Hybrid variants."
+  },
+  {
+    "idx": 18,
+    "category": "Brakes/Suspension",
+    "query": "What suspension type does Hyundai Creta have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "creta_p17_c4"
+    ],
+    "answer": "The Hyundai Creta features a McPherson strut with coil spring for the front suspension and a coupled torsion beam axle for the rear suspension across all engine variants (1.5L MPi petrol, 1.5L U2 CRDi diesel, and 1.5L Turbo GDi petrol)."
+  },
+  {
+    "idx": 19,
+    "category": "Engine",
+    "query": "What engine power does Maruti Jimny have?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "jimny_p10_c3"
+    ],
+    "answer": "The Maruti Suzuki Jimny is equipped with a K15B engine that produces a maximum power of 77.1 kW at 6000 rpm, which is equivalent to 104.8 PS at 6000 rpm."
+  },
+  {
+    "idx": 20,
+    "category": "Engine",
+    "query": "What engine options does Tata Safari offer?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "safari_p36_c3"
+    ],
+    "answer": "The Tata Safari offers two engine options: the HYPERION 1.5L Turbo GDI Petrol Engine and the KRYOTEC 2.0L Turbocharged Diesel Engine. The petrol engine has a capacity of 1498cc, while the diesel engine has a capacity of 1956cc."
+  },
+  {
+    "idx": 21,
+    "category": "Engine",
+    "query": "What is the engine specs of Hyundai Exter?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "exter_p11_c2"
+    ],
+    "answer": "The Hyundai Exter is available with two engine options. The 1.2L Kappa petrol engine produces 61 kW (83 PS) of power at 6 000 r/min and 113.8 Nm (11.6 kgm) of torque at 4 000 r/min. The 1.2L Bi-fuel Kappa petrol with CNG engine produces 50.5 kW (69 PS) of power at 6 000 r/min and 95.2 Nm (9.7 kgm) of torque at 4 000 r/min. Both engines are 4-cylinder units with a displacement of 1 197 cm\u00b3."
+  },
+  {
+    "idx": 22,
+    "category": "Boot/Capacities",
+    "query": "What is the boot space of Tata Nexon?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "nexon_p100_c1",
+      "nexon_p52_c1"
+    ],
+    "answer": "The Tata Nexon offers different boot space capacities depending on the fuel type. The petrol and diesel variants provide 382 litres of boot space, while the CNG variant provides 321 litres of boot space."
+  },
+  {
+    "idx": 23,
+    "category": "Boot/Capacities",
+    "query": "What is the fuel tank capacity of Maruti Baleno?",
+    "status": "PASS",
+    "confidence": "high",
+    "citations": [
+      "baleno_p8_c3"
+    ],
+    "answer": "The Maruti Suzuki Baleno has a fuel tank capacity of 37 litres for the petrol variant. For the CNG variant, the fuel tank capacity is 37 litres for petrol and 55 litres (water equivalent) for CNG."
+  },
+  {
+    "idx": 24,
+    "category": "Boot/Capacities",
+    "query": "What is the boot capacity of Hyundai Verna?",
+    "status": "FAIL",
+    "confidence": "not_found",
+    "citations": [],
+    "answer": "The provided brochure for the Hyundai Verna does not contain information regarding the boot capacity."
+  }
+]

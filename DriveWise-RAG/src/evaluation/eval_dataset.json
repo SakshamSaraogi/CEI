@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1,
+    "category": "factual",
+    "query": "Does the Hyundai Creta have a sunroof?",
+    "history": [],
+    "reference": "Yes, the Hyundai Creta is equipped with a voice-enabled smart panoramic sunroof."
+  },
+  {
+    "id": 2,
+    "category": "factual",
+    "query": "What is the fuel tank capacity of the Hyundai Creta?",
+    "history": [],
+    "reference": "The fuel tank capacity of the Hyundai Creta is 50 litres."
+  },
+  {
+    "id": 3,
+    "category": "factual",
+    "query": "What is the wheelbase of the Hyundai Creta?",
+    "history": [],
+    "reference": "The wheelbase of the Hyundai Creta is 2610 mm."
+  },
+  {
+    "id": 4,
+    "category": "factual",
+    "query": "Does the Maruti Suzuki Swift have side and curtain airbags in the base LXi variant?",
+    "history": [],
+    "reference": "Yes, the Maruti Suzuki Swift is equipped with side and curtain airbags as standard across all variants, including the base LXi variant."
+  },
+  {
+    "id": 5,
+    "category": "factual",
+    "query": "What is the fuel tank capacity of the Maruti Suzuki Swift petrol variant?",
+    "history": [],
+    "reference": "The fuel tank capacity of the Maruti Suzuki Swift petrol variant is 37 litres."
+  },
+  {
+    "id": 6,
+    "category": "factual",
+    "query": "How many cylinders does the Maruti Suzuki Swift engine have?",
+    "history": [],
+    "reference": "The Maruti Suzuki Swift engine has 3 cylinders."
+  },
+  {
+    "id": 7,
+    "category": "factual",
+    "query": "What are the front and rear brakes of the Hyundai Creta?",
+    "history": [],
+    "reference": "The Hyundai Creta has disc brakes on both the front and rear wheels."
+  },
+  {
+    "id": 8,
+    "category": "factual",
+    "query": "What is the turning radius of the Maruti Suzuki Swift?",
+    "history": [],
+    "reference": "The minimum turning radius of the Maruti Suzuki Swift is 4.8 metres."
+  },
+  {
+    "id": 9,
+    "category": "factual",
+    "query": "What is the ground clearance of the Maruti Suzuki Swift?",
+    "history": [],
+    "reference": "The ground clearance of the Maruti Suzuki Swift (unladen) is 163 mm."
+  },
+  {
+    "id": 10,
+    "category": "factual",
+    "query": "What is the engine capacity of the Maruti Suzuki Swift?",
+    "history": [],
+    "reference": "The engine capacity of the Maruti Suzuki Swift is 1197 cc."
+  },
+  {
+    "id": 11,
+    "category": "factual",
+    "query": "What is the mileage of the Tata Nexon?",
+    "history": [],
+    "reference": "The provided brochure for the Tata Nexon does not contain information regarding the vehicle's mileage."
+  },
+  {
+    "id": 12,
+    "category": "factual",
+    "query": "What is the overall length of the Hyundai Creta?",
+    "history": [],
+    "reference": "The overall length of the Hyundai Creta is 4330 mm."
+  },
+  {
+    "id": 13,
+    "category": "factual",
+    "query": "Does the Maruti Suzuki Swift have front LED fog lamps in the base variant?",
+    "history": [],
+    "reference": "No, front LED fog lamps are only available on the top-spec ZXi+ variant of the Maruti Suzuki Swift, and not in the base variant."
+  },
+  {
+    "id": 14,
+    "category": "factual",
+    "query": "What is the mileage of the Maruti Suzuki Swift petrol manual variant?",
+    "history": [],
+    "reference": "The fuel efficiency of the Maruti Suzuki Swift petrol manual variant is 24.8 km/l."
+  },
+  {
+    "id": 15,
+    "category": "factual",
+    "query": "Does the Tata Nexon have ADAS features?",
+    "history": [],
+    "reference": "Yes, the Tata Nexon has ADAS (Advanced Driver Assistance Systems) features listed in its brochure, including functions like Adaptive Cruise Control, Lane Keep Assist, and Autonomous Emergency Braking."
+  },
+  {
+    "id": 16,
+    "category": "variant_disambiguation",
+    "query": "What is the boot space of the Tata Nexon?",
+    "history": [],
+    "reference": "The boot space of the Tata Nexon is 321 litres for the CNG variant and 382 litres for the petrol and diesel variants."
+  },
+  {
+    "id": 17,
+    "category": "variant_disambiguation",
+    "query": "What is the fuel efficiency of the Maruti Suzuki Swift across variants?",
+    "history": [],
+    "reference": "The fuel efficiency of the Maruti Suzuki Swift is 24.8 km/l for petrol manual (MT), 25.75 km/l for petrol automatic (AMT), and 32.85 km/kg for the CNG manual variant."
+  },
+  {
+    "id": 18,
+    "category": "variant_disambiguation",
+    "query": "What is the boot space of the Maruti Suzuki Swift?",
+    "history": [],
+    "reference": "The boot space of the Maruti Suzuki Swift is 265 litres for the petrol variant, while there is no boot space data listed for the CNG variant."
+  },
+  {
+    "id": 19,
+    "category": "variant_disambiguation",
+    "query": "What is the transmission of the Maruti Suzuki Swift across variants?",
+    "history": [],
+    "reference": "The Maruti Suzuki Swift is available with a 5-speed manual transmission (5MT) for both petrol and CNG variants, and a 5-speed automatic transmission (5AMT) for petrol variants only."
+  },
+  {
+    "id": 20,
+    "category": "variant_disambiguation",
+    "query": "What is the fuel tank capacity of the Maruti Suzuki Swift across different fuels?",
+    "history": [],
+    "reference": "The fuel tank capacity of the Maruti Suzuki Swift is 37 litres for the petrol variant and 55 litres (water filling capacity) for the CNG variant."
+  },
+  {
+    "id": 21,
+    "category": "comparison",
+    "query": "Which has a bigger engine, the Tata Nexon or the Mahindra XUV3XO?",
+    "history": [],
+    "reference": "The Tata Nexon has a 1199 cc petrol/CNG engine and a 1497 cc diesel engine. No data is available in the brochures for the Mahindra XUV3XO, so a comparison cannot be made."
+  },
+  {
+    "id": 22,
+    "category": "comparison",
+    "query": "Compare the wheelbase of the Hyundai Creta and Maruti Suzuki Swift.",
+    "history": [],
+    "reference": "The Hyundai Creta has a wheelbase of 2610 mm, which is larger than the Maruti Suzuki Swift's wheelbase of 2450 mm."
+  },
+  {
+    "id": 23,
+    "category": "comparison",
+    "query": "Which has a larger fuel tank capacity, the Hyundai Creta or the Maruti Suzuki Swift?",
+    "history": [],
+    "reference": "The Hyundai Creta has a larger fuel tank capacity of 50 litres compared to the Maruti Suzuki Swift petrol capacity of 37 litres."
+  },
+  {
+    "id": 24,
+    "category": "comparison",
+    "query": "Compare the boot space of the Maruti Suzuki Swift and the Hyundai Creta.",
+    "history": [],
+    "reference": "The Hyundai Creta has a boot space of 433 litres, which is larger than the Maruti Suzuki Swift's boot space of 265 litres."
+  },
+  {
+    "id": 25,
+    "category": "comparison",
+    "query": "Which has a longer overall length, the Maruti Suzuki Swift or the Tata Nexon?",
+    "history": [],
+    "reference": "The Tata Nexon has a total length of 3995 mm, which is longer than the Maruti Suzuki Swift's length of 3860 mm."
+  },
+  {
+    "id": 26,
+    "category": "follow_up",
+    "query": "What about its ground clearance?",
+    "history": [
+      {"role": "user", "content": "What is the length of the Maruti Suzuki Swift?"},
+      {"role": "assistant", "content": "The Maruti Suzuki Swift has a total length of 3860 mm."}
+    ],
+    "reference": "The ground clearance of the Maruti Suzuki Swift is 163 mm."
+  },
+  {
+    "id": 27,
+    "category": "follow_up",
+    "query": "Does it have a smart panoramic sunroof?",
+    "history": [
+      {"role": "user", "content": "Tell me about the Hyundai Creta sunroof"},
+      {"role": "assistant", "content": "The Hyundai Creta has a smart panoramic sunroof."}
+    ],
+    "reference": "Yes, the Hyundai Creta is equipped with a voice-enabled smart panoramic sunroof."
+  },
+  {
+    "id": 28,
+    "category": "follow_up",
+    "query": "What is its fuel tank capacity?",
+    "history": [
+      {"role": "user", "content": "What is the wheelbase of the Hyundai Creta?"},
+      {"role": "assistant", "content": "The wheelbase of the Hyundai Creta is 2610 mm."}
+    ],
+    "reference": "The fuel tank capacity of the Hyundai Creta is 50 litres."
+  },
+  {
+    "id": 29,
+    "category": "follow_up",
+    "query": "What is the capacity of its engine?",
+    "history": [
+      {"role": "user", "content": "Tell me about the Maruti Suzuki Swift cylinders"},
+      {"role": "assistant", "content": "The Swift has a 3 cylinder engine."}
+    ],
+    "reference": "The engine capacity of the Maruti Suzuki Swift is 1197 cc."
+  },
+  {
+    "id": 30,
+    "category": "follow_up",
+    "query": "What about its mileage?",
+    "history": [
+      {"role": "user", "content": "What is the boot space of the Tata Nexon?"},
+      {"role": "assistant", "content": "The Nexon boot space is 382 litres."}
+    ],
+    "reference": "The provided brochure for the Tata Nexon does not contain information regarding the vehicle's mileage."
+  }
+]

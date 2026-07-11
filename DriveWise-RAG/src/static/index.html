@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveWise RAG - Premium Car Brochure Explorer</title>
+    <!-- EventFlow Custom Fonts: Fustat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ChartJS for Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Three.js for 3D Car Model Rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Custom Style System -->
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="dark-mode">
+    <!-- EventFlow-Style Hero Landing Page -->
+    <div class="landing-page" id="landing-page">
+        <!-- EventFlow Ambient Grid Background & Glowing Spot -->
+        <div class="eventflow-ambient"></div>
+        <div class="eventflow-grid-overlay"></div>
+        
+        <!-- Floating Frosty Glass Navbar -->
+        <header class="landing-navbar liquid-glass">
+            <div class="landing-logo" id="landing-logo">
+                <span>DriveWise®</span>
+                <span class="landing-asterisk">✳︎</span>
+            </div>
+            
+            <div class="landing-nav-links">
+                <a class="nav-link-btn" data-tab="chat">Explore</a>
+                <a class="nav-link-btn" data-tab="compare">Compare</a>
+                <a class="nav-link-btn" data-tab="analytics">Analytics</a>
+                <a class="nav-link-btn" data-tab="settings">Settings</a>
+            </div>
+            
+            <button class="landing-cta-btn shadow-btn" id="landing-enter-cta">
+                <span class="cta-arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                Launch Console
+            </button>
+            
+            <button class="hamburger-btn" id="hamburger-btn">
+                <span class="hamburger-line line-1"></span>
+                <span class="hamburger-line line-2"></span>
+                <span class="hamburger-line line-3"></span>
+            </button>
+        </header>
+        
+        <!-- Mobile Navigation Menu Overlay -->
+        <div class="mobile-overlay" id="mobile-overlay">
+            <a class="mobile-link" data-tab="chat">Explore</a>
+            <a class="mobile-link" data-tab="compare">Compare</a>
+            <a class="mobile-link" data-tab="analytics">Analytics</a>
+            <a class="mobile-link" data-tab="settings">Settings</a>
+            <a class="mobile-link mobile-cta" id="mobile-enter-cta">Launch Console</a>
+        </div>
+        
+        <!-- Hero Content Section -->
+        <section class="landing-hero-content">
+            <!-- Left Column: Content -->
+            <div class="hero-left">
+                <!-- Social Proof Rating -->
+                <div class="rating-badge font-body">
+                    <div class="rating-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <span class="rating-text">Grounded on official brochure specifications</span>
+                </div>
+                
+                <h1 class="hero-headline">
+                    Discover faster, <br />
+                    compare smoother.
+                </h1>
+                
+                <p class="hero-subheadline font-body">
+                    DriveWise connects raw PDF brochures to hybrid semantic engines. Search specifications and verify vehicle features with page-level citations.
+                </p>
+                
+                <!-- Search console box -->
+                <div class="search-console-wrapper">
+                    <form class="search-console-form liquid-glass" id="landing-search-form">
+                        <i class="fa-solid fa-magnifying-glass console-search-icon"></i>
+                        <input type="text" id="landing-search-input" placeholder="What specifications are we exploring today?..." autocomplete="off">
+                        <button type="submit" class="console-submit-btn">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="console-suggested">
+                    <span class="suggest-label">Try:</span>
+                    <button class="suggest-chip" data-query="Does the Hyundai Creta have a sunroof?">Creta Sunroof?</button>
+                    <button class="suggest-chip" data-query="Compare the engine displacement in cc, turbocharger support details, and boot space in litres of the creta and baleno.">Nexon vs Baleno Compare</button>
+                </div>
+            </div>
+            
+            <!-- Right Column: Animated 3D Car Model -->
+            <div class="hero-right">
+                <div class="canvas-3d-wrapper">
+                    <div id="car-3d-container"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="app-container" id="app-container" style="display: none;">
+        <!-- Sidebar: Model Selector & Navigation -->
+        <aside class="sidebar">
+            <div class="brand-header">
+                <div class="logo">
+                    <i class="fa-solid fa-compass-drafting logo-icon"></i>
+                    <span>DriveWise <span class="logo-accent">RAG</span></span>
+                </div>
+            </div>
+            
+            <nav class="nav-menu">
+                <button class="nav-btn active" data-tab="chat">
+                    <i class="fa-regular fa-comments"></i> Chat Assistant
+                </button>
+                <button class="nav-btn" data-tab="compare">
+                    <i class="fa-solid fa-code-compare"></i> Compare Models
+                </button>
+                <button class="nav-btn" data-tab="analytics">
+                    <i class="fa-solid fa-chart-line"></i> Analytics
+                </button>
+                <button class="nav-btn" data-tab="settings">
+                    <i class="fa-solid fa-sliders"></i> System Settings
+                </button>
+            </nav>
+
+            <div class="sidebar-divider"></div>
+
+            <div class="brochures-header">
+                <span>Ingested Brochures</span>
+                <span class="count-badge" id="brochure-count">0</span>
+            </div>
+
+            <!-- Dynamic Model Selector Grid -->
+            <div class="model-selector-grid" id="model-grid">
+                <div class="grid-loading"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading models...</div>
+            </div>
+        </aside>
+
+        <!-- Main Screen -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="main-header">
+                <div class="header-left">
+                    <button class="mobile-sidebar-toggle" id="mobile-sidebar-toggle" title="Toggle Sidebar">
+                        <i class="fa-solid fa-bars-staggered"></i>
+                    </button>
+                    <div>
+                        <h1 id="screen-title">Chat Assistant</h1>
+                        <p class="header-subtitle" id="screen-subtitle">Explore technical specifications with grounded facts</p>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="status-indicator">
+                        <span class="status-dot online"></span>
+                        <span id="rag-status-text">Mock Mode Active</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area Container -->
+            <div class="content-body">
+                <!-- TAB 1: Chat Assistant -->
+                <section class="tab-content active" id="tab-chat">
+                    <div class="chat-layout">
+                        <!-- Chat Session Panel -->
+                        <div class="chat-main">
+                            <!-- Selected Model Banner -->
+                            <div class="active-model-banner hidden" id="active-model-banner">
+                                <div class="banner-info">
+                                    <span class="banner-label">Active Filter:</span>
+                                    <span class="banner-value" id="active-model-name">None</span>
+                                    <button class="clear-banner-btn" id="clear-model-filter" title="Clear Filter">
+                                        <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            
+                            <!-- Messages Area -->
+                            <div class="chat-messages" id="chat-messages">
+                                <div class="message assistant welcome">
+                                    <div class="avatar"><i class="fa-solid fa-robot"></i></div>
+                                    <div class="message-bubble">
+                                        <p>Hello! I am your DriveWise assistant. Select a brochure from the left side grid to filter searches, or ask a question directly.</p>
+                                        <div class="suggested-prompts">
+                                            <button class="prompt-chip" data-query="Does the Hyundai Creta have a sunroof?">
+                                                <i class="fa-solid fa-magnifying-glass"></i> Creta Sunroof?
+                                            </button>
+                                            <button class="prompt-chip" data-query="What is the boot space of the Tata Nexon?">
+                                                <i class="fa-solid fa-magnifying-glass"></i> Nexon Boot Space?
+                                            </button>
+                                            <button class="prompt-chip" data-query="Which has a bigger engine, the Tata Nexon or the Mahindra XUV3XO?">
+                                                <i class="fa-solid fa-magnifying-glass"></i> Engine Comparison
+                                            </button>
+                                            <button class="prompt-chip" data-query="What is the mileage of the Tata Nexon?">
+                                                <i class="fa-solid fa-magnifying-glass"></i> Nexon Mileage
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Input Box -->
+                            <div class="chat-input-container">
+                                <form class="chat-input-form" id="chat-form">
+                                    <input type="text" id="query-input" placeholder="Type a specification question (e.g. boot space, ground clearance)..." autocomplete="off">
+                                    <button type="submit" class="send-btn" id="send-btn" title="Send Message">
+                                        <i class="fa-solid fa-paper-plane"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Chat Sidebar: Debug Panel (Chunks & Payload) -->
+                        <div class="chat-sidebar" id="debug-sidebar">
+                            <div class="panel-header">
+                                <h3><i class="fa-solid fa-bug"></i> RAG Grounding Debug</h3>
+                                <button class="toggle-debug-btn" id="debug-toggle-view" title="Collapse Panel">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="panel-body" id="debug-panel-content">
+                                <div class="debug-empty-state">
+                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                                    <p>Ask a query to view retrieved context blocks, reranking scores, and schema properties.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 2: Compare Mode -->
+                <section class="tab-content" id="tab-compare">
+                    <div class="compare-container">
+                        <div class="compare-selectors">
+                            <div class="compare-selector-box">
+                                <label for="compare-model-1">Model 1</label>
+                                <select id="compare-model-1">
+                                    <option value="">Select Car Model...</option>
+                                </select>
+                            </div>
+                            <div class="compare-middle">
+                                <span class="vs-badge">VS</span>
+                            </div>
+                            <div class="compare-selector-box">
+                                <label for="compare-model-2">Model 2</label>
+                                <select id="compare-model-2">
+                                    <option value="">Select Car Model...</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="compare-actions">
+                            <button class="primary-btn" id="run-comparison-btn"><i class="fa-solid fa-right-left"></i> Run Specifications Comparison</button>
+                        </div>
+
+                        <div class="compare-results-grid" id="compare-results-grid">
+                            <div class="compare-empty-state">
+                                <i class="fa-solid fa-table-list"></i>
+                                <p>Select two models and run comparison to inspect specifications side-by-side.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 3: Analytics Dashboard -->
+                <section class="tab-content" id="tab-analytics">
+                    <div class="analytics-grid">
+                        <!-- Stats Row -->
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Total Queries Logged</span>
+                                <span class="stat-val" id="analytics-total-queries">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-regular fa-clock"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Avg Pipeline Latency</span>
+                                <span class="stat-val" id="analytics-avg-latency">0 ms</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fa-solid fa-layer-group"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-label">Model Confidence Success</span>
+                                <span class="stat-val" id="analytics-success-rate">0%</span>
+                            </div>
+                        </div>
+
+                        <!-- Chart Cards -->
+                        <div class="chart-card span-2">
+                            <h3>Query Volume Trends (Past 30 Days)</h3>
+                            <div class="chart-wrapper">
+                                <canvas id="chart-volume"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card">
+                            <h3>RAG Confidence Levels</h3>
+                            <div class="chart-wrapper donut">
+                                <canvas id="chart-confidence"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="chart-card span-3">
+                            <h3>Top 5 Queried Brochure Models</h3>
+                            <div class="chart-wrapper horizontal-bar">
+                                <canvas id="chart-top-models"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TAB 4: System Settings -->
+                <section class="tab-content" id="tab-settings">
+                    <div class="settings-container">
+                        <div class="settings-card">
+                            <h3>RAG Execution Mode</h3>
+                            <div class="setting-row">
+                                <div class="setting-info">
+                                    <span class="setting-title">Mock Generation Mode (`MOCK_LLM`)</span>
+                                    <span class="setting-desc">Simulate structured LLM outputs using offline test payloads to conserve daily quota.</span>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="settings-mock-toggle" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>API Configuration</h3>
+                            <div class="setting-row">
+                                <div class="setting-info">
+                                    <span class="setting-title">Active LLM Target Model</span>
+                                    <span class="setting-desc" id="settings-model-name">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Database Maintenance</h3>
+                            <div class="setting-row">
+                                <div class="setting-info">
+                                    <span class="setting-title">Clear Logs History</span>
+                                    <span class="setting-desc">Delete all logged queries from the SQLite analytical database.</span>
+                                </div>
+                                <button class="danger-btn" id="clear-db-btn"><i class="fa-solid fa-trash-can"></i> Clear logs</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Citations Preview Modal -->
+    <div class="modal-overlay hidden" id="citation-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-file-invoice"></i> Citation Facts Detail</h3>
+                <button class="close-modal-btn" id="close-citation-modal"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body" id="citation-modal-body">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sidebar Backdrop for Mobile -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+    <!-- Script Hook -->
+    <script src="/static/app.js"></script>
+</body>
+</html>
