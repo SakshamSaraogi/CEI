@@ -1,0 +1,15 @@
+Understanding Text Embedding Models
+
+An embedding model converts a piece of text into a fixed-length vector of numbers so that semantically similar pieces of text end up close together in that vector space. This is the foundation of modern semantic search and Retrieval-Augmented Generation.
+
+Classical Approaches
+Before deep learning became dominant, techniques like TF-IDF and Latent Semantic Analysis, or LSA, were used to build vector representations of text. TF-IDF weights each word by how important it is to a document relative to a larger collection, while LSA applies a matrix factorization technique called Singular Value Decomposition to reduce a sparse TF-IDF matrix into a smaller set of dense dimensions that approximate underlying topics. These classical approaches are fast, require no GPU, and work entirely offline, though they capture less semantic nuance than modern neural embeddings.
+
+Neural Embedding Models
+Modern embedding models are built on transformer architectures and are trained on massive amounts of text so that they capture deep semantic relationships between words and sentences. Sentence-transformers models such as all-MiniLM-L6-v2 map an entire sentence or paragraph to a dense vector, typically between 384 and 1536 dimensions, and are commonly used for retrieval tasks because they are fast and accurate. Larger proprietary embedding models are also offered through APIs from providers such as OpenAI and Cohere.
+
+Choosing an Embedding Dimension
+Higher-dimensional embeddings can capture more nuanced semantic information but require more memory and slightly more computation to search. A dimension between 128 and 768 is a common practical choice for many RAG systems, balancing retrieval quality against storage and speed.
+
+Evaluating Embedding Quality
+The quality of an embedding model for a retrieval task is usually measured using metrics like recall at k, which checks whether the correct chunk appears within the top k retrieved results, and mean reciprocal rank, which rewards placing the correct chunk as close to the top of the ranked list as possible. The Massive Text Embedding Benchmark, known as MTEB, is a widely referenced leaderboard for comparing embedding models across many tasks and languages.

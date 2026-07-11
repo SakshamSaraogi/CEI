@@ -1,0 +1,25 @@
+Document Question Answering System (RAG)
+
+Overview
+This project implements a Retrieval-Augmented Generation (RAG) system that answers questions based on custom documents. Instead of relying only on a language model's internal knowledge, the system retrieves relevant information from documents and then generates answers grounded in that information. This improves factual accuracy and allows question answering over private or domain-specific data.
+
+Objectives
+The project aims to understand the concept of Retrieval-Augmented Generation, build a pipeline combining retrieval and generation, enable question answering over custom documents such as PDFs or text files, and learn how modern AI systems work internally.
+
+Key Concepts
+Retrieval is responsible for finding the most relevant chunks of text from a document. It typically uses embeddings and vector similarity search. Augmentation means the retrieved content is added to the model's input to provide context for answering. Generation means a language model generates the final answer using the retrieved context, ensuring responses are grounded in actual data.
+
+System Architecture
+The pipeline consists of the following stages: document ingestion, where documents such as PDFs or text files are loaded and converted into raw text; text chunking, where the text is split into smaller chunks to improve retrieval accuracy; embedding creation, where each chunk is converted into a vector representation capturing its semantic meaning; vector database storage, where embeddings are stored for efficient similarity search; query processing, where the user's question is converted into an embedding; context retrieval, where the system retrieves the most relevant chunks from the database; and answer generation, where a language model generates an answer using the retrieved context.
+
+Components Used
+The system uses an embedding model for converting text into vectors, a vector store for similarity search, and a language model for generating answers.
+
+Improvements and Experiments
+Potential improvements include using better chunking strategies, trying different embedding models, improving retrieval using hybrid search that combines keyword and vector search, adding re-ranking for better relevance, and experimenting with different language models.
+
+Key Learnings
+Building this project teaches how RAG systems combine retrieval and generation, the importance of retrieval in improving answer accuracy, how to work with embeddings and vector databases, how to handle unstructured text data, and how to design scalable AI pipelines.
+
+Conclusion
+This project demonstrates how to build a system that can understand user queries, retrieve relevant information, and generate accurate answers. RAG systems are widely used in chatbots, knowledge assistants, enterprise search systems, and AI-powered documentation tools.

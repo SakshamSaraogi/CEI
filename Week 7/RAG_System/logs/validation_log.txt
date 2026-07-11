@@ -1,0 +1,163 @@
+RAG SYSTEM — VALIDATION LOG
+Generated: 2026-07-05T16:42:25.193439
+Config: {
+  "data_path": "data/sample_docs",
+  "chunk_size": 800,
+  "chunk_overlap": 150,
+  "embedder_backend": "lsa",
+  "generator_backend": "extractive",
+  "embedding_dim": 128,
+  "retrieve_top_k": 8,
+  "rerank_top_k": 3,
+  "use_hybrid_search": true,
+  "use_reranking": true
+}
+Build metrics: {
+  "num_documents": 3,
+  "num_chunks": 14,
+  "avg_chunk_chars": 676.0,
+  "embedding_dim": 13,
+  "vector_backend": "faiss.IndexFlatIP",
+  "ingestion_seconds": 0.0001,
+  "chunking_seconds": 0.0004,
+  "indexing_seconds": 0.9981
+}
+==========================================================================================
+
+[Test 1] Question: What is the main idea of the RAG project?
+Expected source doc: rag_project_notes
+Retrieved source docs (ranked): ['rag_project_notes', 'rag_project_notes', 'vector_databases']
+Top-1 match: True | Top-k match: True
+Answer:
+Key Learnings Building this project teaches how RAG systems combine retrieval and generation, the importance of retrieval in improving answer accuracy, how to work with embeddings and vector databases, how to handle unstructured text data, and how to design scalable AI pipelines. Objectives The project aims to understand the concept of Retrieval-Augmented Generation, build a pipeline combining retrieval and generation, enable question answering over custom documents such as PDFs or text files, and learn how modern AI systems work internally. Why Vector Databases Matter for RAG In a Retrieval-Augmented Generation system, every chunk of a document is converted into an embedding vector.
+
+(Grounded in: rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.0011, 'rerank_seconds': 0.0003, 'generation_seconds': 0.0002, 'total_seconds': 0.0016}
+------------------------------------------------------------------------------------------
+
+[Test 2] Question: What are the stages of the RAG system architecture?
+Expected source doc: rag_project_notes
+Retrieved source docs (ranked): ['rag_project_notes', 'vector_databases', 'rag_project_notes']
+Top-1 match: True | Top-k match: True
+Answer:
+System Architecture The pipeline consists of the following stages: document ingestion, where documents such as PDFs or text files are loaded and converted into raw text; text chunking, where the text is split into smaller chunks to improve retrieval accuracy; embedding creation, where each chunk is converted into a vector representation capturing its semantic meaning; vector database storage, where embeddings are stored for efficient similarity search; query processing, where the user's question is converted into an embedding; context retrieval, where the system retrieves the most relevant chunks from the database; and answer generation, where a language model generates an answer using the retrieved context. Why Vector Databases Matter for RAG In a Retrieval-Augmented Generation system, every chunk of a document is converted into an embedding vector. Key Learnings Building this project teaches how RAG systems combine retrieval and generation, the importance of retrieval in improving answer accuracy, how to work with embeddings and vector databases, how to handle unstructured text data, and how to design scalable AI pipelines.
+
+(Grounded in: rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.001, 'rerank_seconds': 0.0003, 'generation_seconds': 0.0001, 'total_seconds': 0.0014}
+------------------------------------------------------------------------------------------
+
+[Test 3] Question: What is retrieval-augmented generation used for?
+Expected source doc: rag_project_notes
+Retrieved source docs (ranked): ['rag_project_notes', 'embedding_models', 'vector_databases']
+Top-1 match: True | Top-k match: True
+Answer:
+Why Vector Databases Matter for RAG In a Retrieval-Augmented Generation system, every chunk of a document is converted into an embedding vector. This is the foundation of modern semantic search and Retrieval-Augmented Generation. Document Question Answering System (RAG) Overview This project implements a Retrieval-Augmented Generation (RAG) system that answers questions based on custom documents.
+
+(Grounded in: embedding_models, rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 4] Question: What is a vector database?
+Expected source doc: vector_databases
+Retrieved source docs (ranked): ['vector_databases', 'rag_project_notes', 'rag_project_notes']
+Top-1 match: True | Top-k match: True
+Answer:
+Introduction to Vector Databases A vector database is a specialized storage system designed to hold high-dimensional numeric vectors and to search them efficiently by similarity rather than by exact match. The vector database's job is to quickly find which stored vectors are closest to the query vector, using a distance metric such as cosine similarity or Euclidean distance. System Architecture The pipeline consists of the following stages: document ingestion, where documents such as PDFs or text files are loaded and converted into raw text; text chunking, where the text is split into smaller chunks to improve retrieval accuracy; embedding creation, where each chunk is converted into a vector representation capturing its semantic meaning; vector database storage, where embeddings are stored for efficient similarity search; query processing, where the user's question is converted into an embedding; context retrieval, where the system retrieves the most relevant chunks from the database; and answer generation, where a language model generates an answer using the retrieved context.
+
+(Grounded in: rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0003, 'generation_seconds': 0.0002, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 5] Question: Why do vector databases use approximate nearest neighbor search?
+Expected source doc: vector_databases
+Retrieved source docs (ranked): ['vector_databases', 'vector_databases', 'vector_databases']
+Top-1 match: True | Top-k match: True
+Answer:
+Approximate Nearest Neighbor Search Because comparing a query vector against millions of stored vectors one by one would be slow, most vector databases use Approximate Nearest Neighbor, or ANN, algorithms. Introduction to Vector Databases A vector database is a specialized storage system designed to hold high-dimensional numeric vectors and to search them efficiently by similarity rather than by exact match. Why Vector Databases Matter for RAG In a Retrieval-Augmented Generation system, every chunk of a document is converted into an embedding vector.
+
+(Grounded in: vector_databases)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 6] Question: What is the difference between FAISS and Pinecone?
+Expected source doc: vector_databases
+Retrieved source docs (ranked): ['vector_databases', 'rag_project_notes', 'vector_databases']
+Top-1 match: True | Top-k match: True
+Answer:
+Popular Vector Store Options FAISS, developed by Meta, is a widely used open-source library for efficient similarity search and clustering of dense vectors, and it can run entirely on a local machine without any cloud dependency. System Architecture The pipeline consists of the following stages: document ingestion, where documents such as PDFs or text files are loaded and converted into raw text; text chunking, where the text is split into smaller chunks to improve retrieval accuracy; embedding creation, where each chunk is converted into a vector representation capturing its semantic meaning; vector database storage, where embeddings are stored for efficient similarity search; query processing, where the user's question is converted into an embedding; context retrieval, where the system retrieves the most relevant chunks from the database; and answer generation, where a language model generates an answer using the retrieved context. Pinecone and Weaviate are managed cloud vector databases that offer additional features like metadata filtering and horizontal scaling.
+
+(Grounded in: rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.001, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0014}
+------------------------------------------------------------------------------------------
+
+[Test 7] Question: What does hybrid search combine?
+Expected source doc: vector_databases
+Retrieved source docs (ranked): ['rag_project_notes', 'rag_project_notes', 'vector_databases']
+Top-1 match: False | Top-k match: True
+Answer:
+using hybrid search that combines keyword and vector search, adding re-ranking for better relevance, and experimenting with different language models. Improvements and Experiments Potential improvements include using better chunking strategies, trying different embedding models, improving retrieval using hybrid search that combines keyword and vector search, adding re-ranking for better relevance, and experimenting with different language models. Hybrid Search Pure vector search sometimes misses exact keyword matches, such as product codes or proper nouns, because embeddings capture semantic meaning rather than exact wording.
+
+(Grounded in: rag_project_notes, vector_databases)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0002, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 8] Question: What is an embedding model?
+Expected source doc: embedding_models
+Retrieved source docs (ranked): ['embedding_models', 'rag_project_notes', 'embedding_models']
+Top-1 match: True | Top-k match: True
+Answer:
+Evaluating Embedding Quality The quality of an embedding model for a retrieval task is usually measured using metrics like recall at k, which checks whether the correct chunk appears within the top k retrieved results, and mean reciprocal rank, which rewards placing the correct chunk as close to the top of the ranked list as possible. Components Used The system uses an embedding model for converting text into vectors, a vector store for similarity search, and a language model for generating answers. Understanding Text Embedding Models An embedding model converts a piece of text into a fixed-length vector of numbers so that semantically similar pieces of text end up close together in that vector space.
+
+(Grounded in: embedding_models, rag_project_notes)
+Timing (s): {'retrieval_seconds': 0.001, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 9] Question: How does TF-IDF and LSA work for embeddings?
+Expected source doc: embedding_models
+Retrieved source docs (ranked): ['embedding_models', 'embedding_models', 'rag_project_notes']
+Top-1 match: True | Top-k match: True
+Answer:
+Classical Approaches Before deep learning became dominant, techniques like TF-IDF and Latent Semantic Analysis, or LSA, were used to build vector representations of text. TF-IDF weights each word by how important it is to a document relative to a larger collection, while LSA applies a matrix factorization technique called Singular Value Decomposition to reduce a sparse TF-IDF matrix into a smaller set of dense dimensions that approximate underlying topics. Key Learnings Building this project teaches how RAG systems combine retrieval and generation, the importance of retrieval in improving answer accuracy, how to work with embeddings and vector databases, how to handle unstructured text data, and how to design scalable AI pipelines.
+
+(Grounded in: embedding_models, rag_project_notes)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0012}
+------------------------------------------------------------------------------------------
+
+[Test 10] Question: How is embedding quality evaluated?
+Expected source doc: embedding_models
+Retrieved source docs (ranked): ['embedding_models', 'embedding_models', 'embedding_models']
+Top-1 match: True | Top-k match: True
+Answer:
+Evaluating Embedding Quality The quality of an embedding model for a retrieval task is usually measured using metrics like recall at k, which checks whether the correct chunk appears within the top k retrieved results, and mean reciprocal rank, which rewards placing the correct chunk as close to the top of the ranked list as possible. A dimension between 128 and 768 is a common practical choice for many RAG systems, balancing retrieval quality against storage and speed. The Massive Text Embedding Benchmark, known as MTEB, is a widely referenced leaderboard for comparing embedding models across many tasks and languages.
+
+(Grounded in: embedding_models)
+Timing (s): {'retrieval_seconds': 0.001, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0002, 'total_seconds': 0.0014}
+------------------------------------------------------------------------------------------
+
+[Test 11] Question: What improvements could be made to this RAG project?
+Expected source doc: rag_project_notes
+Retrieved source docs (ranked): ['rag_project_notes', 'rag_project_notes', 'rag_project_notes']
+Top-1 match: True | Top-k match: True
+Answer:
+Key Learnings Building this project teaches how RAG systems combine retrieval and generation, the importance of retrieval in improving answer accuracy, how to work with embeddings and vector databases, how to handle unstructured text data, and how to design scalable AI pipelines. Conclusion This project demonstrates how to build a system that can understand user queries, retrieve relevant information, and generate accurate answers. Document Question Answering System (RAG) Overview This project implements a Retrieval-Augmented Generation (RAG) system that answers questions based on custom documents.
+
+(Grounded in: rag_project_notes)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0013}
+------------------------------------------------------------------------------------------
+
+[Test 12] Question: What is a cross-encoder used for?
+Expected source doc: vector_databases
+Retrieved source docs (ranked): ['vector_databases', 'vector_databases', 'embedding_models']
+Top-1 match: True | Top-k match: True
+Answer:
+Cross-encoder models, which read the query and each candidate together rather than encoding them separately, are often used for this second-pass re-ranking because they tend to be more accurate, even though they are slower to run than the initial vector search. Popular Vector Store Options FAISS, developed by Meta, is a widely used open-source library for efficient similarity search and clustering of dense vectors, and it can run entirely on a local machine without any cloud dependency. Chroma is a lightweight, developer-friendly vector store often used for prototyping RAG systems.
+
+(Grounded in: vector_databases)
+Timing (s): {'retrieval_seconds': 0.0009, 'rerank_seconds': 0.0002, 'generation_seconds': 0.0001, 'total_seconds': 0.0012}
+------------------------------------------------------------------------------------------
+
+SUMMARY
+Questions evaluated: 12
+Top-1 retrieval accuracy (correct doc ranked first): 91.67%
+Top-k retrieval accuracy (correct doc in final context set): 100.00%
+Average end-to-end latency per question: 0.0013s

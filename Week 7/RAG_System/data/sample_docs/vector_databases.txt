@@ -1,0 +1,18 @@
+Introduction to Vector Databases
+
+A vector database is a specialized storage system designed to hold high-dimensional numeric vectors and to search them efficiently by similarity rather than by exact match. Traditional databases index rows by keys or values, but vector databases index embeddings, which are numeric representations of text, images, or audio produced by machine learning models.
+
+Why Vector Databases Matter for RAG
+In a Retrieval-Augmented Generation system, every chunk of a document is converted into an embedding vector. When a user asks a question, that question is also converted into a vector. The vector database's job is to quickly find which stored vectors are closest to the query vector, using a distance metric such as cosine similarity or Euclidean distance. The chunks corresponding to the closest vectors are assumed to be the most relevant to the question.
+
+Approximate Nearest Neighbor Search
+Because comparing a query vector against millions of stored vectors one by one would be slow, most vector databases use Approximate Nearest Neighbor, or ANN, algorithms. Popular ANN techniques include HNSW graphs, inverted file indexes, and product quantization. These techniques trade a small amount of accuracy for a large gain in search speed, which is essential when working with large document collections.
+
+Popular Vector Store Options
+FAISS, developed by Meta, is a widely used open-source library for efficient similarity search and clustering of dense vectors, and it can run entirely on a local machine without any cloud dependency. Pinecone and Weaviate are managed cloud vector databases that offer additional features like metadata filtering and horizontal scaling. Chroma is a lightweight, developer-friendly vector store often used for prototyping RAG systems.
+
+Hybrid Search
+Pure vector search sometimes misses exact keyword matches, such as product codes or proper nouns, because embeddings capture semantic meaning rather than exact wording. Hybrid search combines a traditional keyword-based method like BM25 or TF-IDF with dense vector similarity, blending the two scores so that both semantic relevance and exact term matches are taken into account. This tends to improve retrieval quality on real-world queries.
+
+Re-ranking
+After an initial retrieval step returns a shortlist of candidate chunks, a re-ranking model can be applied to more precisely order those candidates by relevance to the query. Cross-encoder models, which read the query and each candidate together rather than encoding them separately, are often used for this second-pass re-ranking because they tend to be more accurate, even though they are slower to run than the initial vector search.
