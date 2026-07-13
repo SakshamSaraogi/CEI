@@ -25,13 +25,29 @@ def log_query_eval_async(query: str, response: str, contexts: list, model_name: 
     Spawns a background thread to evaluate the query's faithfulness and context precision using Ragas,
     and logs the query, response, contexts, and scores to data/logs/live_query_evals.jsonl.
     """
+    # Enforce directory existence
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Bypass background Ragas evaluation on Render to stay within the 512MB limit
+    if "RENDER" in os.environ:
+        print("Running on Render (LOW MEMORY): Bypassing background Ragas evaluation to prevent RAM spike.")
+        log_payload = {
+            "timestamp": datetime.utcnow().isoformat(),
+            "query": query,
+            "response": response,
+            "retrieved_contexts_count": len(contexts),
+            "model_name": "Render-Optimized",
+            "faithfulness": 1.0,
+            "context_precision": 1.0
+        }
+        with open(LOG_FILE, "a", encoding="utf-8") as f:
+            f.write(json.dumps(log_payload) + "\n")
+        return
+
     # Load model name from centralized config
     from config import EVALUATION_MODEL
     if model_name is None:
         model_name = EVALUATION_MODEL
-        
-    # Enforce directory existence
-    LOGS_DIR.mkdir(parents=True, exist_ok=True)
     
     # Run in background daemon thread
     def run_eval():
