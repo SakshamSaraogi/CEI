@@ -487,6 +487,8 @@ def chat(request: ChatRequest):
             )
             return resp
         except Exception as e:
+            import traceback
+            traceback.print_exc() # Force full traceback print in Render logs
             logger.log_query(
                 query=request.query,
                 brand=request.brand,
