@@ -382,7 +382,7 @@ class DriveWiseRetriever:
                 demotion = get_disclaimer_demotion(chunk["chunk_text"])
                 final_score = raw_score + boost + structure_boost + demotion
                 chunk["rerank_score"] = final_score
-                chunk["grounding_confidence"] = "high" if final_score > 3.0 else "medium"
+                chunk["grounding_confidence"] = compute_sigmoid(final_score - 3.0)
             
         top_rrf_chunks.sort(key=lambda x: x["rerank_score"], reverse=True)
         t_rerank_end = time.time()
