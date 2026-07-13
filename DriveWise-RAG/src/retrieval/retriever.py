@@ -148,11 +148,17 @@ class DriveWiseRetriever:
         self.collection_name = "car_brochures"
         
         # 4. Initialize Local Embedding & Reranker Models
-        print("Initializing Dense Embedding Model (BAAI/bge-large-en-v1.5)...")
-        self.embed_model = TextEmbedding(model_name="BAAI/bge-large-en-v1.5")
+        print("Initializing Dense Embedding Model (BAAI/bge-small-en-v1.5)...")
+        self.embed_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")
         
-        print("Initializing Cross-Encoder Reranker Model (Xenova/ms-marco-MiniLM-L-6-v2)...")
-        self.rerank_model = TextCrossEncoder(model_name="Xenova/ms-marco-MiniLM-L-6-v2")
+        # Disable Cross-Encoder reranker on Render to stay within 512MB RAM limit
+        self.use_reranker = "RENDER" not in os.environ
+        if self.use_reranker:
+            print("Initializing Cross-Encoder Reranker Model (Xenova/ms-marco-MiniLM-L-6-v2)...")
+            self.rerank_model = TextCrossEncoder(model_name="Xenova/ms-marco-MiniLM-L-6-v2")
+        else:
+            print("Running in LOW MEMORY mode on Render: Disabling Cross-Encoder reranker.")
+            self.rerank_model = None
         
         # 5. Dynamically build brand_model_map from indexed chunks
         self.brand_model_map = {}
@@ -350,28 +356,33 @@ class DriveWiseRetriever:
         top_rrf_chunks = [chunk_lookup[cid] for cid in sorted_cids[:20]]
         t_rrf_end = time.time()
         
-        # --- 4. Cross-Encoder Re-Ranking ---
+        # --- 4. Cross-Encoder Re-Ranking / RRF Fallback ---
         t_rerank_start = time.time()
         if not top_rrf_chunks:
             return []
             
-        texts_to_score = [c["chunk_text"] for c in top_rrf_chunks]
-        rerank_scores = list(self.rerank_model.rerank(query, texts_to_score))
-        
-        for idx, chunk in enumerate(top_rrf_chunks):
-            raw_score = float(rerank_scores[idx])
-            boost = get_lexical_boost(query, chunk["chunk_text"], search_keywords)
-            
-            # Structure boost: prioritize structured specification tables over narrative paragraphs
-            structure_boost = 0.0
-            sec_type = chunk["metadata"].get("section_type", "narrative")
-            if sec_type != "narrative" and sec_type != "scanned":
-                structure_boost = 3.5
-                
-            demotion = get_disclaimer_demotion(chunk["chunk_text"])
-            final_score = raw_score + boost + structure_boost + demotion
-            chunk["rerank_score"] = final_score
-            chunk["grounding_confidence"] = compute_sigmoid(final_score)
+        if self.rerank_model is not None:
+            texts_to_score = [c["chunk_text"] for c in top_rrf_chunks]
+            rerank_scores = list(self.rerank_model.rerank(query, texts_to_score))
+            for idx, chunk in enumerate(top_rrf_chunks):
+                raw_score = float(rerank_scores[idx])
+                boost = get_lexical_boost(query, chunk["chunk_text"], search_keywords)
+                structure_boost = 3.5 if chunk["metadata"].get("section_type", "narrative") not in ["narrative", "scanned"] else 0.0
+                demotion = get_disclaimer_demotion(chunk["chunk_text"])
+                final_score = raw_score + boost + structure_boost + demotion
+                chunk["rerank_score"] = final_score
+                chunk["grounding_confidence"] = compute_sigmoid(final_score)
+        else:
+            # Low-memory fallback: use RRF score scaled to cross-encoder ranges
+            for chunk in top_rrf_chunks:
+                # Max RRF is 2/60 = 0.033. Scale to a range similar to cross-encoder (0 to 10)
+                raw_score = chunk["rrf_score"] * 150.0 
+                boost = get_lexical_boost(query, chunk["chunk_text"], search_keywords)
+                structure_boost = 3.5 if chunk["metadata"].get("section_type", "narrative") not in ["narrative", "scanned"] else 0.0
+                demotion = get_disclaimer_demotion(chunk["chunk_text"])
+                final_score = raw_score + boost + structure_boost + demotion
+                chunk["rerank_score"] = final_score
+                chunk["grounding_confidence"] = "high" if final_score > 3.0 else "medium"
             
         top_rrf_chunks.sort(key=lambda x: x["rerank_score"], reverse=True)
         t_rerank_end = time.time()

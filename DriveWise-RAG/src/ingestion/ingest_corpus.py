@@ -101,8 +101,8 @@ def main():
     
     # Initialize FastEmbed text embedding client
     try:
-        # This will automatically download and load the BAAI/bge-large-en-v1.5 ONNX model
-        embed_model = TextEmbedding(model_name="BAAI/bge-large-en-v1.5")
+        # This will automatically download and load the BAAI/bge-small-en-v1.5 ONNX model
+        embed_model = TextEmbedding(model_name="BAAI/bge-small-en-v1.5")
     except Exception as e:
         print(f"[ERROR] Failed to initialize embedding model: {e}")
         return
@@ -138,7 +138,7 @@ def main():
             
         qdrant_client.create_collection(
             collection_name=collection_name,
-            vectors_config=VectorParams(size=1024, distance=Distance.COSINE),
+            vectors_config=VectorParams(size=384, distance=Distance.COSINE),
         )
         
         points = []

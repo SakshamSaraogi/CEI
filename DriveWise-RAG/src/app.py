@@ -59,6 +59,19 @@ def read_root():
 # Logger instance
 logger = SQLiteLogger()
 
+@app.on_event("startup")
+def startup_event():
+    # Eagerly initialize RAG components on boot if not in mock mode
+    if os.environ.get("MOCK_LLM", "true").lower() != "true":
+        print("Eagerly initializing RAG components on startup...")
+        try:
+            get_rag_components()
+            print("RAG components initialized successfully!")
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            print(f"Error during eager startup initialization: {e}")
+
 # Pydantic models for chat request/response
 class ChatMessage(BaseModel):
     role: str
@@ -542,4 +555,5 @@ if __name__ == "__main__":
     # Make sure env is set
     if "MOCK_LLM" not in os.environ:
         os.environ["MOCK_LLM"] = "true"
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
