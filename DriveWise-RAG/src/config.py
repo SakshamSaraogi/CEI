@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 # Automatically find project root and load environment variables
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-load_dotenv(PROJECT_ROOT / ".env", override=True)
+load_dotenv(PROJECT_ROOT / ".env")
 
 # API Keys
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "").strip()

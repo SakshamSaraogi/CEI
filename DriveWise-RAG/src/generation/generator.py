@@ -16,7 +16,7 @@ from retrieval.retriever import DriveWiseRetriever
 # Load env variables
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parents[1]
-load_dotenv(PROJECT_ROOT / ".env", override=True)
+load_dotenv(PROJECT_ROOT / ".env")
 
 import sys
 if str(PROJECT_ROOT / "src") not in sys.path:
@@ -321,21 +321,6 @@ class DriveWiseGenerator:
                     rewritten_query="",
                     is_comparison=False
                 )
-            # Ensure answer is always a string representation (handles cases where LLMs return dictionary or lists for answer)
-            ans = data.get("answer")
-            if ans is not None:
-                if isinstance(ans, dict):
-                    lines = []
-                    for k, v in ans.items():
-                        k_fmt = str(k).replace("_", " ").title()
-                        lines.append(f"**{k_fmt}**: {v}")
-                    data["answer"] = "\n".join(lines)
-                elif isinstance(ans, list):
-                    data["answer"] = "\n".join([f"- {item}" for item in ans])
-                else:
-                    data["answer"] = str(ans)
-            else:
-                data["answer"] = ""
             
             # Helper to normalize target string into SearchTarget dict
             def normalize_target(t):

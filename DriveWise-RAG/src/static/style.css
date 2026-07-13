@@ -1409,6 +1409,8 @@ input:checked + .slider:before {
     gap: 32px;
     position: relative;
     z-index: 10;
+    padding-top: 80px; /* Safe padding for bottom suggestions */
+    box-sizing: border-box;
 }
 
 .hero-left {
@@ -1418,7 +1420,8 @@ input:checked + .slider:before {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    gap: 24px;
+    gap: 16px; /* More compact vertical space */
+    margin-top: 40px; /* Safe offset under navbar */
 }
 
 .rating-badge {
@@ -1446,19 +1449,18 @@ input:checked + .slider:before {
 
 .hero-headline {
     font-family: var(--font-heading);
-    font-size: clamp(38px, 5.5vw, 75px);
+    font-size: clamp(32px, 4.2vw, 58px); /* More compact to match 90% scale view */
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.05;
-    letter-spacing: -2px;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
 }
 
 .hero-subheadline {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 15px; /* Compact body font size */
+    line-height: 1.5;
     color: rgba(255, 255, 255, 0.6);
-    tracking-style: -0.5px;
-    max-width: 550px;
+    max-width: 500px;
 }
 
 .search-console-wrapper {
@@ -1560,7 +1562,7 @@ input:checked + .slider:before {
     align-items: flex-end;
     width: 100%;
     height: 100%;
-    padding-bottom: 80px;
+    padding-bottom: 40px; /* Reduced to align perfectly with search console */
 }
 
 .orb-container {

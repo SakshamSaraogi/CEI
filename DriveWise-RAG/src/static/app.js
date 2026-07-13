@@ -1018,7 +1018,7 @@ function init3DModel() {
     // 2. Camera Setup (Three-quarter front view, looking directly at origin)
     const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
     camera.position.set(4.0, 1.1, -5.2); // Frame the car massive and centered inside canvas
-    camera.lookAt(0, -0.15, 0);
+    camera.lookAt(0, -0.55, 0);
     
     // 3. Renderer Setup
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -1136,7 +1136,7 @@ function init3DModel() {
             const scaledBox = new THREE.Box3().setFromObject(carModel);
             const center = scaledBox.getCenter(new THREE.Vector3());
             carModel.position.sub(center);
-            carModel.position.y = -0.3; // Sit centered vertically in canvas
+            carModel.position.y = -0.85; // Shifted down to clear navbar and align with search
         },
         undefined,
         (error) => {
